@@ -55,5 +55,11 @@
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $("#navbar a").click(function{
+            $("#navbar").find("li").removeClass("active");
+            $(this).parent().addclass("active");
+        });
+    </script>>
   </body>
 </html>
