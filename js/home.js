@@ -5,9 +5,12 @@ $(function(){
 var homeObject={
 	navbarClickInit:function(){
 		$("#home_navbar a").click(function(){
-			$("#home_navbar").find("li").removeClass("active");
-			$(this).parent().addClass("active");
+			homeObject.changeNavBar($(this));
 		});
+	},
+	changeNavBar:function(obj){
+		$("#home_navbar").find("li").removeClass("active");
+		obj.parent().addClass("active");
 	}
 
 }
