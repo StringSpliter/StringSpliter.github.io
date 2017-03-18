@@ -17,9 +17,9 @@ var homeObject={
 	},
 	narImgClickInit:function(){
 		$("#link_img a").click(function(){
-			homeObject.clearPopBox();
 			if($(this).attr("isBox")=='yes'){
 				if($(this).attr("active")=="no"){
+					homeObject.clearPopBox();
 					$("#narImg .popover-title").html("扫码，加我微信～");
 					$("#narImg img").attr("src","../src/img/wechat.jpg");
 					homeObject.popBoxConvert($(this));
@@ -27,19 +27,22 @@ var homeObject={
 					$("#narImg").removeClass("out");
 					$("#narImg").addClass("in");
 				}else{
+					homeObject.clearPopBox();
 					$("#narImg").removeClass("in");
 					$("#narImg").addClass("out");
 					$("#narImg img").attr("src","");
 					$(this).attr("active","no");
 				}
+			}else{
+				homeObject.clearPopBox();
 			}
 		});
 	},
 	narLinkDonClickInit:function(){
 		$("#nar_link a").click(function(){
-			homeObject.clearPopBox();
 			if($(this).attr("isBox")=='yes'){
 				if($(this).attr("active")=="no"){
+					homeObject.clearPopBox();
 					$("#narImg .popover-title").html("扫码，犒赏我～");
 					$("#narImg img").attr("src","../src/img/wechatpay.jpg");
 					homeObject.popBoxConvert($(this));
@@ -47,11 +50,14 @@ var homeObject={
 					$("#narImg").removeClass("out");
 					$("#narImg").addClass("in");
 				}else{
+					homeObject.clearPopBox();
 					$("#narImg").removeClass("in");
 					$("#narImg").addClass("out");
 					$("#narImg img").attr("src","");
 					$(this).attr("active","no");
 				}
+			}else{
+				homeObject.clearPopBox();
 			}
 		});
 	},
