@@ -47,20 +47,25 @@
           <a class="navbar-brand" href="#">yhl's blog</a>
         </div>
         <div id="home_navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#home">主页</a></li>
-            <li><a href="#classify">分类</a></li>
-            <li><a href="#contact">联系我</a></li>
-            <li><a href="#about">关于</a></li>
+          <ul id="nar_link" class="nav navbar-nav">
+            <li isBox="no" class="active"><a href="#home">主页</a></li>
+            <li><a isBox="no" href="#classify">分类</a></li>
+            <li><a isBox="no"  href="#contact">联系我</a></li>
+            <li><a isBox="yes" active="no" href="#contact">Donation</a></li>
+            <li><a isBox="no" href="#about">关于</a></li>
           </ul>
           <ul id="link_img" class="nav navbar-nav" style="float: right;">
-            <li><a onclick="window.open('https://github.com/StringSpliter')"><img src="../src/img/git.jpg"/></a></li>
-            <li><a href="#qq"><img src="../src/img/head.jpg"/></a></li>
+            <li><a isBox='false' onclick="window.open('https://github.com/StringSpliter')"><img src="../src/img/git.jpg"/></a></li>
+            <li><a isBox='yes' active="no" href="#qq"><img src="../src/img/wechat.jpg"/></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
+    <div class="popover fade bottom out" role="tooltip" id="narImg" style="position:absolute;top: 134px; left: 302.867px;display: block;">
+      <div class="arrow" style="left: 50%;"></div>
+      <h3 class="popover-title"><!-- 扫码，加我微信 --></h3>
+      <div class="popover-content"><img style="width: 180px;height: 180px" src=""/></div>
+    </div>
     <div class="container-fluid">
       
     </div>
