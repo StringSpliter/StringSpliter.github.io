@@ -17,49 +17,50 @@ var homeObject={
 	},
 	narImgClickInit:function(){
 		$("#link_img a").click(function(){
+			homeObject.clearPopBox();
 			if($(this).attr("isBox")=='yes'){
 				if($(this).attr("active")=="no"){
-					homeObject.popBoxConvert($(this));
 					$("#narImg .popover-title").html("扫码，加我微信～");
 					$("#narImg img").attr("src","../src/img/wechat.jpg");
+					homeObject.popBoxConvert($(this));
 					$(this).attr("active","yes");
 					$("#narImg").removeClass("out");
 					$("#narImg").addClass("in");
 				}else{
 					$("#narImg").removeClass("in");
 					$("#narImg").addClass("out");
+					$("#narImg img").attr("src","");
 					$(this).attr("active","no");
 				}
-			}else{
-					$("#narImg").removeClass("in");
-					$("#narImg").addClass("out");
-					$("#home_navbar a[isBox='yes']").attr("active","no");
 			}
 		});
 	},
 	narLinkDonClickInit:function(){
 		$("#nar_link a").click(function(){
+			homeObject.clearPopBox();
 			if($(this).attr("isBox")=='yes'){
 				if($(this).attr("active")=="no"){
-					homeObject.popBoxConvert($(this));
 					$("#narImg .popover-title").html("扫码，犒赏我～");
 					$("#narImg img").attr("src","../src/img/wechatpay.jpg");
+					homeObject.popBoxConvert($(this));
 					$(this).attr("active","yes");
 					$("#narImg").removeClass("out");
 					$("#narImg").addClass("in");
 				}else{
 					$("#narImg").removeClass("in");
 					$("#narImg").addClass("out");
+					$("#narImg img").attr("src","");
 					$(this).attr("active","no");
 				}
-			}else{
-					$("#narImg").removeClass("in");
-					$("#narImg").addClass("out");
-					$("#home_navbar a[isBox='yes']").attr("active","no");
 			}
 		});
-	}	
-	,
+	},
+	clearPopBox:function(){
+		$("#narImg").removeClass("in");
+		$("#narImg").addClass("out");
+		$("#narImg img").attr("src","");
+		$("#home_navbar a[isBox='yes']").attr("active","no");
+	},
 	popBoxConvert:function(obj){
 			var x = obj.offset().top;
 			var y = obj.offset().left;
