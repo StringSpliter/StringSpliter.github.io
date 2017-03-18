@@ -80,11 +80,11 @@ var homeObject={
 	bindWindowResize:function(){
 		$(window).resize(function () {       
 			var obj = $("#link_img a[active='yes']");
-			if(obj){
+			if(obj&&obj.length>0){
 				homeObject.popBoxConvert(obj);
 			}
 			var _obj = $("#nar_link a[active='yes']");
-			if(_obj){
+			if(_obj&&_obj.length>0){
 				homeObject.popBoxConvert(_obj);
 			}
 		});
