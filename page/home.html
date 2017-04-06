@@ -30,47 +30,56 @@
       #link_img li{
         margin-left: 20px;
       }
-    </style>>
+      .footer{
+        position:absolute;
+        bottom:0;width:100%;
+        height:30px;
+        background-color: #333333;
+      }
+    </style>
   </head>
 
   <body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">yhl's blog</a>
+    <div class="container header">   
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">yhl's blog</a>
+          </div>
+          <div id="home_navbar" class="collapse navbar-collapse">
+            <ul id="nar_link" class="nav navbar-nav">
+              <li isBox="no" class="active"><a href="#home">主页</a></li>
+              <li><a isBox="no" href="#classify">分类</a></li>
+              <li><a isBox="no"  href="#contact">联系我</a></li>
+              <li><a isBox="yes" active="no" href="#contact">Donation</a></li>
+              <li><a isBox="no" href="#about">关于</a></li>
+            </ul>
+            <ul id="link_img" class="nav navbar-nav" style="float: right;">
+              <li><a isBox='false' onclick="window.open('https://github.com/StringSpliter')"><img src="../src/img/git.jpg"/></a></li>
+              <li><a isBox='yes' active="no" href="#qq"><img src="../src/img/wechat.jpg"/></a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
         </div>
-        <div id="home_navbar" class="collapse navbar-collapse">
-          <ul id="nar_link" class="nav navbar-nav">
-            <li isBox="no" class="active"><a href="#home">主页</a></li>
-            <li><a isBox="no" href="#classify">分类</a></li>
-            <li><a isBox="no"  href="#contact">联系我</a></li>
-            <li><a isBox="yes" active="no" href="#contact">Donation</a></li>
-            <li><a isBox="no" href="#about">关于</a></li>
-          </ul>
-          <ul id="link_img" class="nav navbar-nav" style="float: right;">
-            <li><a isBox='false' onclick="window.open('https://github.com/StringSpliter')"><img src="../src/img/git.jpg"/></a></li>
-            <li><a isBox='yes' active="no" href="#qq"><img src="../src/img/wechat.jpg"/></a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
+      </nav>
+      <div class="popover fade bottom out" role="tooltip" id="narImg" style="position:absolute;top: 134px; left: 302.867px;display: block;">
+        <div class="arrow" style="left: 50%;"></div>
+        <h3 class="popover-title"><!-- 扫码，加我微信 --></h3>
+        <div class="popover-content"><img style="width: 180px;height: 180px" src=""/></div>
       </div>
-    </nav>
-    <div class="popover fade bottom out" role="tooltip" id="narImg" style="position:absolute;top: 134px; left: 302.867px;display: block;">
-      <div class="arrow" style="left: 50%;"></div>
-      <h3 class="popover-title"><!-- 扫码，加我微信 --></h3>
-      <div class="popover-content"><img style="width: 180px;height: 180px" src=""/></div>
     </div>
-    <div class="container-fluid">
-      
+    <div class="container content" style="margin-top: 50px;">
+        <iframe src="./module/homepage.html" style="border-width: 0px;width:100%"></iframe>
     </div>
-
-
+    <div class="container footer">
+        <p style="color: #fff;text-align:center;">Copyright © Yang</p>
+    </div>
+    
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
