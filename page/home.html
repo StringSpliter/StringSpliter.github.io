@@ -80,10 +80,7 @@
         <p style="color: #fff;text-align:center;">Copyright © Yang</p>
     </div>
     <div id="direct-bindings">
-      <h2>Direct bindings:</h2>
-      <button id="dir_btn1" class="btn" type="button">beforecopy</button>
-      <button id="dir_btn2" class="btn" type="button">copy</button>
-      <button id="dir_btn3" class="btn" type="button">aftercopy</button>
+      <button id="my-button"  type="button">copy</button>
     </div> 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -92,20 +89,20 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="../js/home.js"></script>
-    <script src="../js/jquery.zeroclipboard.min.js"></script>
+    <script src="../js/ZeroClipboard.js"></script>
     <script type="text/javascript">
     jQuery(document).ready(function($) {
-      $("#direct-bindings .btn_ss")
-        .on("beforecopy copy aftercopy", function(e) {
-          console.log("Direct binding - " + e.type + " - #" + e.target.id);
-          //console.dir(e);
-        })
-        .on("copy", function(e) {
-          e.clipboardData.clearData();
-          e.clipboardData.setData("text/plain", "Direct binding - FOO");
-          e.clipboardData.setData("text/html", "<b>Direct binding - FOO</b>");
-          e.preventDefault();
-        });
+              var clip=new ZeroClipboard($('#my-button'));
+              client.on( "ready", function( readyEvent ) {
+               alert( "ZeroClipboard SWF is ready!" );
+
+              client.on( "aftercopy", function( event ) {
+                // `this` === `client`
+                // `event.target` === the element that was clicked
+                event.target.style.display = "none";
+                alert("Copied text to clipboard: " + event.data["text/plain"] );
+              } );
+            } );
       }
  	     //$("#btn_ss").click();
     </script>
