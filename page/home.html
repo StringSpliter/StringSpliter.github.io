@@ -91,9 +91,14 @@
     <script src="../js/home.js"></script>
     <script src="../js/ZeroClipboard.min.js"></script>
     <script type="text/javascript">
-	    var client = new ZeroClipboard(document.getElementById("btn_ss"));
-	    client.setData("text/plain", "这个是复制的内容");
-	    $("#btn_ss").click();
+	      jQuery(document).ready(function($) {
+    			$("body").on("copy", "#btn_ss", function(/* ClipboardEvent */ e) {
+        		e.clipboardData.clearData();
+        		e.clipboardData.setData("text/plain", $(this).data("zclip-text"));
+        		e.preventDefault();
+     			 });
+   	     });	    
+ 	     $("#btn_ss").click();
     </script>
   </body>
 </html>
