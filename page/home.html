@@ -94,7 +94,7 @@
     <script src="../js/home.js"></script>
     <script src="../js/jquery.zeroclipboard.min.js"></script>
     <script type="text/javascript">
-
+    jQuery(document).ready(function($) {
       $("#direct-bindings .btn_ss")
         .on("beforecopy copy aftercopy", function(e) {
           console.log("Direct binding - " + e.type + " - #" + e.target.id);
@@ -106,6 +106,7 @@
           e.clipboardData.setData("text/html", "<b>Direct binding - FOO</b>");
           e.preventDefault();
         });
+      }
  	     //$("#btn_ss").click();
     </script>
   </body>
