@@ -79,8 +79,11 @@
     <div class="container footer">
         <p style="color: #fff;text-align:center;">Copyright © Yang</p>
     </div>
-    <div>
-    	<button id="btn_ss" data-zclip-text="Testing 1-2-3!">复制</button>
+    <div id="direct-bindings">
+      <h2>Direct bindings:</h2>
+      <button id="dir_btn1" class="btn" type="button">beforecopy</button>
+      <button id="dir_btn2" class="btn" type="button">copy</button>
+      <button id="dir_btn3" class="btn" type="button">aftercopy</button>
     </div> 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -91,14 +94,19 @@
     <script src="../js/home.js"></script>
     <script src="../js/jquery.zeroclipboard.min.js"></script>
     <script type="text/javascript">
-	      jQuery(document).ready(function($) {
-    			$("body").on("copy", "#btn_ss", function(/* ClipboardEvent */ e) {
-        		e.clipboardData.clearData();
-        		e.clipboardData.setData("text/plain", $(this).data("zclip-text"));
-        		e.preventDefault();
-     			 });
-   	     });	    
- 	     $("#btn_ss").click();
+
+      $("#direct-bindings .btn_ss")
+        .on("beforecopy copy aftercopy", function(e) {
+          console.log("Direct binding - " + e.type + " - #" + e.target.id);
+          //console.dir(e);
+        })
+        .on("copy", function(e) {
+          e.clipboardData.clearData();
+          e.clipboardData.setData("text/plain", "Direct binding - FOO");
+          e.clipboardData.setData("text/html", "<b>Direct binding - FOO</b>");
+          e.preventDefault();
+        });
+ 	     //$("#btn_ss").click();
     </script>
   </body>
 </html>
