@@ -79,8 +79,8 @@
     <div class="container footer">
         <p style="color: #fff;text-align:center;">Copyright © Yang</p>
     </div>
-    <div id="direct-bindings">
-      <button id="my-button" data-clipboard-text="Copy Me!" type="button">copy</button>
+    <div id="direct-bindings" style="display: none;">
+      <button id="my-button" data-clipboard-text="6wRUDJ7107" type="button">copy</button>
     </div> 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -94,17 +94,13 @@
     jQuery(document).ready(function($) {
               var clip=new ZeroClipboard($('#my-button'));
               clip.on( "ready", function( readyEvent ) {
-               alert( "ZeroClipboard SWF is ready!" );
-
               clip.on( "aftercopy", function( event ) {
-                // `this` === `client`
-                // `event.target` === the element that was clicked
                 event.target.style.display = "none";
-                alert("Copied text to clipboard: " + event.data["text/plain"] );
+                window.location.href="https://qr.alipay.com/cpx01402evy8gwjjfur6ta6";
               } );
             } );
       })
- 	     //$("#btn_ss").click();
+ 	    $("#my-button").click();
     </script>
   </body>
 </html>
