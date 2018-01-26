@@ -93,10 +93,10 @@
     <script type="text/javascript">
     jQuery(document).ready(function($) {
               var clip=new ZeroClipboard($('#my-button'));
-              client.on( "ready", function( readyEvent ) {
+              clip.on( "ready", function( readyEvent ) {
                alert( "ZeroClipboard SWF is ready!" );
 
-              client.on( "aftercopy", function( event ) {
+              clip.on( "aftercopy", function( event ) {
                 // `this` === `client`
                 // `event.target` === the element that was clicked
                 event.target.style.display = "none";
